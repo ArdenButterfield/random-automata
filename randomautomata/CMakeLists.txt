@@ -18,6 +18,8 @@ set(PROJECT_SOURCES
         mainwindow.h
         automatarenderarea.h
         automatarenderarea.cpp
+        automatamodel.h
+        automatamodel.cpp
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

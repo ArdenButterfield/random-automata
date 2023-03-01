@@ -6,6 +6,7 @@
 #include <memory>
 
 #include "automatarenderarea.h"
+#include "automatamodel.h"
 
 class MainWindow : public QMainWindow
 {
@@ -24,5 +25,6 @@ private:
 
     std::unique_ptr<QPushButton> randomizeButton;
     std::unique_ptr<AutomataRenderArea> automataRenderArea;
+    std::unique_ptr<AutomataModel> automataModel;
 };
 #endif // MAINWINDOW_H
