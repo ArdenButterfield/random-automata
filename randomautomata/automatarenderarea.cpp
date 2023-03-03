@@ -1,6 +1,6 @@
 #include "automatarenderarea.h"
 
-AutomataRenderArea::AutomataRenderArea(QWidget *parent, int r, int c, std::vector<std::vector<int>> &g)
+AutomataRenderArea::AutomataRenderArea(QWidget *parent, int r, int c, std::vector<std::vector<int>>* g)
     : QWidget{parent}, rows{r}, cols{c}
 {
     setBackgroundRole(QPalette::Base);
@@ -20,7 +20,7 @@ void AutomataRenderArea::paintEvent(QPaintEvent * /* event */)
         for (int c = 0; c < cols; ++c) {
             x = r * w;
             y = c * h;
-            painter.fillRect(QRect(x, y, w, h), QBrush(colors[grid[r][c]], Qt::SolidPattern));
+            painter.fillRect(QRect(x, y, w, h), QBrush(colors[(*grid)[r][c]], Qt::SolidPattern));
         }
     }
 

@@ -15,7 +15,7 @@ class AutomataModel
 public:
     AutomataModel(int rows, int cols);
     std::vector<std::vector<int>> grid;
-    void setRule(int length=3, int states=2);
+    void setRule(int length, int states);
     void fill(bool random_start);
 private:
     int rows;

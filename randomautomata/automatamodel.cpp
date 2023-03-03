@@ -13,7 +13,7 @@ AutomataModel::AutomataModel(int r, int c)
 
 void AutomataModel::initialize()
 {
-    setRule(5,5);
+    setRule(1,1);
     fill(true);
 }
 

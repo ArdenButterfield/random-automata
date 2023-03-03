@@ -20,8 +20,8 @@ private slots:
     void randomizeCallback();
 
 private:
-    const int rows = 100;
-    const int cols = 100;
+    const int rows = 200;
+    const int cols = 200;
 
     std::unique_ptr<QPushButton> randomizeButton;
     std::unique_ptr<AutomataRenderArea> automataRenderArea;
