@@ -3,18 +3,25 @@
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
 {
+    this->setStyleSheet("background-color: #EEEEEE;");
+
     length = 3;
     num_states = 3;
     randomize_first_row = false;
 
     automataModel = std::make_unique<AutomataModel>(rows, cols, length, num_states);
     randomizeButton = std::make_unique<QPushButton>("New Rule", this);
+    randomizeButton->setStyleSheet("background-color: #EEEECC; color: #222222");
     automataRenderArea = std::make_unique<AutomataRenderArea>(this, rows, cols, &(automataModel->grid));
 
     statesBox = std::make_unique<QSpinBox>(this);
     lengthBox = std::make_unique<QSpinBox>(this);
+    statesBox->setStyleSheet("QSpinBox{background-color: #EEEECC; color: #222222;}");
+    lengthBox->setStyleSheet("background-color: #EEEECC; color: #222222");
+
 
     firstRowRandom = std::make_unique<QCheckBox>("Random first row", this);
+    firstRowRandom->setStyleSheet("background-color: #CCCC99; color: #222222; border-color: #111111; QCheckBox::indicator{color:magenta;}");
 
     statesBox->setRange(1, 10);
     lengthBox->setRange(1, 10);

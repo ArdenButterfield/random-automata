@@ -5,6 +5,7 @@
 #include <QPushButton>
 #include <QSpinBox>
 #include <QCheckBox>
+#include <QLabel>
 
 #include <memory>
 
@@ -35,6 +36,8 @@ private:
     std::unique_ptr<QSpinBox> statesBox;
     std::unique_ptr<QSpinBox> lengthBox;
     std::unique_ptr<QCheckBox> firstRowRandom;
+
+    std::unique_ptr<QLabel> title;
 
     int length, num_states;
     bool randomize_first_row;
