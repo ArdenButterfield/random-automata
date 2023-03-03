@@ -1,12 +1,11 @@
 #include "automatarenderarea.h"
 
-AutomataRenderArea::AutomataRenderArea(QWidget *parent, int r, int c, std::vector<std::vector<int>> &arr)
+AutomataRenderArea::AutomataRenderArea(QWidget *parent, int r, int c, std::vector<std::vector<int>> &g)
     : QWidget{parent}, rows{r}, cols{c}
 {
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
-    color = QColor("magenta");
-    data_array = arr;
+    grid = g;
 }
 
 void AutomataRenderArea::paintEvent(QPaintEvent * /* event */)
@@ -21,14 +20,8 @@ void AutomataRenderArea::paintEvent(QPaintEvent * /* event */)
         for (int c = 0; c < cols; ++c) {
             x = r * w;
             y = c * h;
-            painter.fillRect(QRect(x, y, w, h), QBrush(colors[data_array[r][c]], Qt::SolidPattern));
+            painter.fillRect(QRect(x, y, w, h), QBrush(colors[grid[r][c]], Qt::SolidPattern));
         }
     }
 
-}
-
-void AutomataRenderArea::changeColor()
-{
-    color = QColor("green");
-    this->repaint();
 }

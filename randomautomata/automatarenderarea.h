@@ -11,7 +11,7 @@ class AutomataRenderArea : public QWidget
 {
     Q_OBJECT
 public:
-    explicit AutomataRenderArea(QWidget *parent, int rows, int cols, std::vector<std::vector<int>> &arr);
+    explicit AutomataRenderArea(QWidget *parent, int rows, int cols, std::vector<std::vector<int>> &grid);
     void changeColor();
 protected:
     void paintEvent(QPaintEvent *event) override;
@@ -20,9 +20,18 @@ signals:
 private:
     const int rows;
     const int cols;
-    std::vector<std::vector<int>> data_array;
+    std::vector<std::vector<int>> grid;
 
-    std::array<QColor, 2> colors {QColor("green"), QColor("magenta")};
+    std::array<QColor, 10> colors {QColor("white"), 
+                                   QColor("black"),
+                                   QColor("red"),
+                                   QColor("green"),
+                                   QColor("blue"),
+                                   QColor("yellow"),
+                                   QColor("magenta"),
+                                   QColor("cyan"),
+                                   QColor("purple"),
+                                   QColor("orange"),
+                               };
 };
-
 #endif // AUTOMATARENDERAREA_H
