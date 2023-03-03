@@ -18,8 +18,8 @@ void AutomataRenderArea::paintEvent(QPaintEvent * /* event */)
     h = height() / rows;
     for (int r = 0; r < rows; ++r) {
         for (int c = 0; c < cols; ++c) {
-            x = r * w;
-            y = c * h;
+            y = r * w;
+            x = c * h;
             painter.fillRect(QRect(x, y, w, h), QBrush(colors[(*grid)[r][c]], Qt::SolidPattern));
         }
     }

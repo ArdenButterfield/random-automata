@@ -13,7 +13,7 @@
 class AutomataModel
 {
 public:
-    AutomataModel(int rows, int cols);
+    AutomataModel(int r, int c, int length, int states);
     std::vector<std::vector<int>> grid;
     void setRule(int length, int states);
     void fill(bool random_start);

@@ -1,20 +1,22 @@
 #include "automatamodel.h"
 
-AutomataModel::AutomataModel(int r, int c)
+AutomataModel::AutomataModel(int r, int c, int length, int states)
 {
     rows = r;
     cols = c;
+
     grid.resize(rows, std::vector(cols, 0));
     srand (time(NULL));
+    rule_length = length;
+    rule_states = states;
     initialize();
-    rule_length = 3;
-    rule_states = 2;
+
 }
 
 void AutomataModel::initialize()
 {
-    setRule(1,1);
-    fill(true);
+    setRule(rule_length, rule_states);
+    fill(false);
 }
 
 void AutomataModel::setRule(int length, int states)
